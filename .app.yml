@@ -1,0 +1,7 @@
+title:
+  dev: "Silverwing 博客开发环境"
+  prod: "Silverwing 博客"
+
+silverwing:
+  dev: true
+  prod: false

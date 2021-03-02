@@ -1,0 +1,18 @@
+{
+	"snippetName": {
+        "scope": "typescriptreact",
+		"prefix": "rtfc",
+		"body": [
+			"import React from \"react\";\n",
+			"import { FunctionComponent } from \"react\";\n",
+			
+			"interface $1Props {}\n",
+			"const $1: FunctionComponent<$1Props> = (props) => {\n",
+			"  return <div></div>;\n",
+			"};\n",
+			"\n",
+			"export default $1\n"
+		],
+		"description": "React typescript function component fragment"
+	}
+}
