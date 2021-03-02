@@ -1,18 +1,6 @@
 
-$nav-color: #F90;
-nav {
-  $width: 100px;
-  width: $width;
-  color: $nav-color;
-}
+$hello: 'world';
 
-//编译后
-main {
-    width: 100%;
-}
-
-
-nav {
-  width: 100px;
-  color: #F90;
+:export {
+  hello: $hello;
 }

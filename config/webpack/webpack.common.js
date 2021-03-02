@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const publicPath = process.env.NODE_ENV === "production" ? "" : "/";
-const SCOPE_NAME = "[path][name]__[local]";
 
 module.exports = {
   entry: path.resolve(
@@ -72,7 +71,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           "style-loader",
-          "css-loader",
+          "fast-css-loader",
           "postcss-loader",
           // 最新的（5.0.0）postcss需要单独写config文件，下面这种写法会报错，可以使用(v3.0.0)
           // {
@@ -86,24 +85,13 @@ module.exports = {
       // 处理sass
       {
         test: /\.s(a|c)ss$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: [
           "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: {
-                localIdentName: SCOPE_NAME,
-              },
-              importLoaders: 3,
-              sourceMap: false,
-            },
-          },
+          "fast-css-loader",
+          "fast-sass-loader",
+
           "postcss-loader",
-          // 最新的（5.0.0）postcss需要单独写config文件，下面这种写法会报错，可以使用(v3.0.0)
-          {
-            loader: "sass-loader",
-          },
         ],
       },
       // 图片处理
@@ -148,7 +136,7 @@ module.exports = {
       dry: false,
     }),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false
+      openAnalyzer: false,
     }),
   ],
 };
