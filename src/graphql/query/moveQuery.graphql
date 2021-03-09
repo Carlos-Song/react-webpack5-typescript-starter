@@ -1,0 +1,15 @@
+interface Node {
+  id: ID!
+}
+
+type Movie implements Node {
+  id: ID!
+  movieName: String
+  yearReleased: String
+  director: String
+}
+
+type Query {
+  movies(ids: [ID]): [Movie]
+  movie(id: ID!): Movie
+}

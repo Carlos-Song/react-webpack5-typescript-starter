@@ -63,7 +63,7 @@ const SiHeader: FunctionComponent<UIShellProps> = (props) => {
 
   return (
     <Header aria-label="Silverwing Blog">
-      <div ref={inputContainerRef}>
+      <div className="search-box" ref={inputContainerRef}>
         {searchToggle && (
           <Search
             className="input"
@@ -79,6 +79,7 @@ const SiHeader: FunctionComponent<UIShellProps> = (props) => {
       </div>
       <HeaderMenuButton
         aria-label="Open menu"
+        className="menu-button"
         isCollapsible
         onClick={onClickSideNavExpand}
         isActive={props.isActive}

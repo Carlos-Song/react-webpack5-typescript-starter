@@ -1,8 +1,8 @@
 import React from "react";
 
 import { FunctionComponent } from "react";
-import SiHeader from "../../components/Header/Header";
-import SiContent from "../../components/Content/Content";
+import SiHeader from "components/Header/Header";
+import SiContent from "components/Content/Content";
 
 interface HomeProps {}
 

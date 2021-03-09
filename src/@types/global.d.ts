@@ -4,3 +4,12 @@ declare module "*.scss" {
   export default content;
 }
 // 如果使用的第三方库没有ts，可以自己在这边申明
+
+
+declare module '*.svg'
+declare module '*.png'
+declare module '*.jpg'
+declare module '*.jpeg'
+declare module '*.gif'
+declare module '*.bmp'
+declare module '*.tiff'
